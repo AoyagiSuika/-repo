@@ -22,3 +22,7 @@ def table(nb, max = 10):
     while i < max:
         i += 1
         print(i, "*", nb, "=", i * nb)
+
+if __name__ == "__main__":
+    table(4)
+    input("Appuyez sur ENTREE pour fermer le programme...")
