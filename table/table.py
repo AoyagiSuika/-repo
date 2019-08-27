@@ -1,3 +1,6 @@
+#! /usr/bin/python3.4
+# -*-coding:Utf-8 -*
+
 # @Author: Dahak Déborah <suika>
 # @Date:   27-08-2019
 # @Email:  dahak.deborah@gmail.com
@@ -6,15 +9,14 @@
 # @Last modified by:   suika
 # @Last modified time: 27-08-2019
 
-#! /usr/bin/python3.4
-# -*-coding:Utf-8 -*
+def table(nb, max = 10):
+    """Fonction affichant la table de multiplication par nb
+    de 1*nb à max*nb
 
-def table(nb, max):
+    (max >= 0)"""
 
     i = 0
 
     while i < max:
         i += 1
         print(i, "*", nb, "=", i * nb)
-
-table(12, 20)
