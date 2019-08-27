@@ -12,13 +12,7 @@
 annee = input("Saisissez une année : ")
 annee = int(annee)
 
-if (annee % 4 == 0):
-    if (annee % 100 == 0):
-        if (annee % 400 == 0):
-            print(annee, "est une année bissextile.")
-        else:
-            print(annee, "n'est pas une année bissextile.")
-    else:
-        print(annee, "est une année bissextile.")
+if annee % 400 == 0 or (annee % 4 == 0 and annee % 100 != 0):
+    print(annee, "est une année bissextile.")
 else:
     print(annee, "n'est pas une année bissextile.")
