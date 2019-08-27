@@ -53,8 +53,10 @@ while continuer == True and argent > 0:
             raise ValueError("Le nombre doit être compris entre 0 et 49.")
     except ValueError as error:
         print(error)
+        continue
     except TypeError:
         print("Veuillez entrer un nombre entre 0 et 49.")
+        continue
     else:
         mise = input("Combien souhaitez-vous miser ?\n")
         try:
@@ -66,10 +68,10 @@ while continuer == True and argent > 0:
                 continue
         except ValueError as error:
             print(error)
-        except MoneyError as error:
-            print(error)
+            continue
         except TypeError:
             print("Veuillez entrer un nombre valide.")
+            continue
         else:
             print("\nVous avez misé", mise, "$ sur le", nb,\
             "lançons la roulette !\n")
