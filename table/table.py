@@ -9,14 +9,12 @@
 #! /usr/bin/python3.4
 # -*-coding:Utf-8 -*
 
-def table():
-    nb = input("Entrez un nombre pour obtenir sa table de multiplication : ")
-    nb = int(nb)
+def table(nb, max):
 
     i = 0
 
-    while i < 10:
+    while i < max:
         i += 1
         print(i, "*", nb, "=", i * nb)
 
-table()
+table(12, 20)
