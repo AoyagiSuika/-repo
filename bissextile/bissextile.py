@@ -10,9 +10,16 @@
 # @Last modified time: 27-08-2019
 
 annee = input("Saisissez une année : ")
-annee = int(annee)
 
-if annee % 400 == 0 or (annee % 4 == 0 and annee % 100 != 0):
-    print(annee, "est une année bissextile.")
+try:
+    annee = int(annee)
+    assert annee > 0
+except ValueError:
+    print("Merci de saisir un nombre")
+except AssertionError:
+    print("Merci de saisir une année supérieure à 0.")
 else:
-    print(annee, "n'est pas une année bissextile.")
+    if annee % 400 == 0 or (annee % 4 == 0 and annee % 100 != 0):
+        print(annee, "est une année bissextile.")
+    else:
+        print(annee, "n'est pas une année bissextile.")
