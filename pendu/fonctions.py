@@ -71,6 +71,9 @@ def pendu(mot, name, score, scores):
         print("Il vous reste", donnees.nb_chances, "essais.")
         lettre = input("Entrez une lettre : ")
         lettre = lettre.lower()
+        if len(lettre) > 1 or not lettre.isalpha():
+            print("Vous devez entrer une lettre.")
+            continue
         if lettre in donnees.found:
             print("Vous avez déjà essayé cette lettre.")
             continue
