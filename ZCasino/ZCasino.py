@@ -7,10 +7,11 @@
 # @Project: Python3
 # @Filename: ZCasino.py
 # @Last modified by:   suika
-# @Last modified time: 27-08-2019
+# @Last modified time: 28-08-2019
 
 from random import randrange
 from math import ceil
+import pickle
 
 def regles():
     """Fonction rappelant les règles de la roulette"""
@@ -40,12 +41,16 @@ def roulette(nb, mise, argent):
         print("Perdu !")
         return argent
 
-argent = 1000
 continuer = True
 
-print("Bienvenue au ZCasino ! Vous disposez de", argent, "$.\n")
+with open("score", "r") as fichier:
+    argent = fichier.read()
+    argent = int(argent)
+
+print("Bienvenue au ZCasino !")
 regles()
 while continuer == True and argent > 0:
+    print("Vous disposez de", argent, "$.\n")
     nb = input("Sur quel nombre voulez-vous miser ?\n")
     try:
         nb = int(nb)
@@ -80,6 +85,10 @@ while continuer == True and argent > 0:
     finally:
         if argent > 0:
             print("Il vous reste", argent, "$.")
+            with open("score", "w") as fichier:
+                argent = str(argent)
+                fichier.write(argent)
+                argent = int(argent)
             rep = input("Souhaitez-vous rejouer ? Y/N\n")
             if rep == "Y" or rep == "y":
                 print("C'est reparti !")
