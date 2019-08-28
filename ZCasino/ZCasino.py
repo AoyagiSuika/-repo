@@ -43,7 +43,7 @@ def roulette(nb, mise, argent):
 
 continuer = True
 
-with open("score", "r") as fichier:
+with open("argent", "r") as fichier:
     argent = fichier.read()
     argent = int(argent)
 
@@ -85,7 +85,7 @@ while continuer == True and argent > 0:
     finally:
         if argent > 0:
             print("Il vous reste", argent, "$.")
-            with open("score", "w") as fichier:
+            with open("argent", "w") as fichier:
                 argent = str(argent)
                 fichier.write(argent)
                 argent = int(argent)
