@@ -14,8 +14,6 @@ import donnees
 
 scores = fonctions.get_scores(donnees.scores)
 name, score = fonctions.get_name(donnees.name, scores, donnees.score)
-print("score :", score)
-print(name)
 
 while donnees.continuer == True:
     mot = fonctions.pick_word(donnees.mots, donnees.mot)

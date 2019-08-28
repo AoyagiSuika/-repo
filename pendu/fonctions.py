@@ -36,6 +36,9 @@ def get_name(name, scores, score):
     et le score associé s'il y en a un"""
 
     name = input("Veuillez entrer votre nom : ")
+    if not name.isalnum() or len(name) < 1:
+        print("Veuillez entre un nom valide.")
+        return get_name(name, scores, score)
     if name in scores:
         score = scores[name]
         print("Votre score actuel est de", score)
