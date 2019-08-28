@@ -97,4 +97,6 @@ while continuer == True and argent > 0:
                 continuer = False
         else:
             print("Vous êtes ruiné. Au revoir !")
+            with open("argent", "w") as fichier:
+                fichier.write("1000")
             continuer = False
