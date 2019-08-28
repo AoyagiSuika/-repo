@@ -23,7 +23,8 @@ def get_scores(scores):
         with open("scores", "rb") as fichier:
             depickler = pickle.Unpickler(fichier)
             scores = depickler.load()
-            print(scores)
+            print("Tableau des scores :")
+            print(scores, "\n")
     else:
         with open("scores", "xb") as fichier:
             scores = {}
